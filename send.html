@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Send Invites</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Nunito',system-ui,sans-serif;background:#0b1026;color:#fff;padding:0 0 40px}
+header{position:sticky;top:0;z-index:10;background:#13224e;padding:16px 16px 14px;border-bottom:3px solid #ff3b30}
+h1{font-size:19px;letter-spacing:.3px}
+.sub{font-size:13px;font-weight:800;color:#9fb6de;margin-top:3px}
+.bar{height:10px;background:#0b1026;border-radius:99px;margin-top:11px;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,#ffd400,#23a455);transition:width .25s}
+.count{font-size:13px;font-weight:900;margin-top:7px;color:#ffd400}
+.card{display:flex;align-items:center;gap:12px;background:#16224a;margin:10px 12px;padding:13px;border-radius:14px;border:2px solid #24356b}
+.card.done{opacity:.42;border-color:#23a455}
+.card.test{background:#2a2140;border-color:#ffd400}
+.who{flex:1;min-width:0}
+.parent{font-size:17px;font-weight:900;line-height:1.2}
+.child{font-size:13px;font-weight:800;color:#9fb6de;margin-top:2px}
+.grp{color:#6d84b4}
+.card.test .grp{color:#ffd400}
+.phone{font-size:12px;font-weight:800;color:#6d84b4;margin-top:2px}
+.send{flex:0 0 auto;background:linear-gradient(180deg,#ff5147,#e0231b);color:#fff;text-decoration:none;
+ font-weight:900;font-size:15px;letter-spacing:.5px;padding:14px 20px;border-radius:11px;box-shadow:0 3px 0 #8d0f0a}
+.send:active{transform:translateY(2px);box-shadow:0 1px 0 #8d0f0a}
+.tick{flex:0 0 auto;width:44px;height:44px;border-radius:11px;border:2px solid #35487f;background:#0f1938;
+ color:#5f76ad;font-size:20px;font-weight:900;cursor:pointer}
+.card.done .tick{background:#23a455;border-color:#23a455;color:#fff}
+.reset{display:block;margin:22px auto 0;background:none;border:2px solid #35487f;color:#8ea6d4;
+ font-family:inherit;font-weight:800;font-size:13px;padding:10px 18px;border-radius:10px;cursor:pointer}
+.tip{margin:14px 14px 0;font-size:13px;font-weight:800;color:#9fb6de;line-height:1.6;
+ background:#16224a;border-left:4px solid #ffd400;padding:12px 14px;border-radius:0 10px 10px 0}
+</style></head><body>
+
+<header>
+  <h1>Send David&rsquo;s Invites</h1>
+  <div class="sub">Tap TEXT &rarr; Messages opens filled in &rarr; hit send</div>
+  <div class="bar"><div class="fill" id="fill"></div></div>
+  <div class="count" id="count">0 of 25 sent</div>
+</header>
+
+<div class="tip">Start with the yellow practice card to yourself. Messages won&rsquo;t come back here, so tap the green check after each send.</div>
+
+  <div class="card test" id="c0">
+    <div class="who">
+      <div class="parent">Crystal Crouch</div>
+      <div class="child">Practice send &middot; <span class="grp">TEST</span></div>
+      <div class="phone">956-207-5879</div>
+    </div>
+    <a class="send" href="sms:+19562075879&body=Practice%20send.%20Hi%20Crystal%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20%5Bchild%5D%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(0)">TEXT</a>
+    <button class="tick" onclick="toggle(0)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c1">
+    <div class="who">
+      <div class="parent">Jessie Bell</div>
+      <div class="child">Lexi Bell &middot; <span class="grp">Bible Class</span></div>
+      <div class="phone">225-328-5756</div>
+    </div>
+    <a class="send" href="sms:+12253285756&body=Hi%20Jessie%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Lexi%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(1)">TEXT</a>
+    <button class="tick" onclick="toggle(1)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c2">
+    <div class="who">
+      <div class="parent">Patrick Bowman</div>
+      <div class="child">Rhiley Bowman &middot; <span class="grp">Bible Class</span></div>
+      <div class="phone">337-277-7193</div>
+    </div>
+    <a class="send" href="sms:+13372777193&body=Hi%20Patrick%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Rhiley%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(2)">TEXT</a>
+    <button class="tick" onclick="toggle(2)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c3">
+    <div class="who">
+      <div class="parent">Kimberly Henry</div>
+      <div class="child">Logan Holloway &middot; <span class="grp">Bible Class</span></div>
+      <div class="phone">501-305-1988</div>
+    </div>
+    <a class="send" href="sms:+15013051988&body=Hi%20Kimberly%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Logan%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(3)">TEXT</a>
+    <button class="tick" onclick="toggle(3)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c4">
+    <div class="who">
+      <div class="parent">Riley Mayo</div>
+      <div class="child">Tauren Mayo &middot; <span class="grp">Bible Class</span></div>
+      <div class="phone">501-593-2838</div>
+    </div>
+    <a class="send" href="sms:+15015932838&body=Hi%20Riley%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Tauren%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(4)">TEXT</a>
+    <button class="tick" onclick="toggle(4)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c5">
+    <div class="who">
+      <div class="parent">Hannah Pankey</div>
+      <div class="child">Hazel Pankey &middot; <span class="grp">Bible Class</span></div>
+      <div class="phone">501-207-1172</div>
+    </div>
+    <a class="send" href="sms:+15012071172&body=Hi%20Hannah%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Hazel%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(5)">TEXT</a>
+    <button class="tick" onclick="toggle(5)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c6">
+    <div class="who">
+      <div class="parent">Deena Reynolds</div>
+      <div class="child">Samuel Reynolds &middot; <span class="grp">Bible Class</span></div>
+      <div class="phone">501-388-1913</div>
+    </div>
+    <a class="send" href="sms:+15013881913&body=Hi%20Deena%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Samuel%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(6)">TEXT</a>
+    <button class="tick" onclick="toggle(6)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c7">
+    <div class="who">
+      <div class="parent">Ashton Smith</div>
+      <div class="child">Ledger Smith &middot; <span class="grp">Bible Class</span></div>
+      <div class="phone">501-230-3481</div>
+    </div>
+    <a class="send" href="sms:+15012303481&body=Hi%20Ashton%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Ledger%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(7)">TEXT</a>
+    <button class="tick" onclick="toggle(7)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c8">
+    <div class="who">
+      <div class="parent">Lynley Turner</div>
+      <div class="child">Grant Turner &middot; <span class="grp">Bible Class</span></div>
+      <div class="phone">318-245-4242</div>
+    </div>
+    <a class="send" href="sms:+13182454242&body=Hi%20Lynley%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Grant%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(8)">TEXT</a>
+    <button class="tick" onclick="toggle(8)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c9">
+    <div class="who">
+      <div class="parent">Alli Bullard</div>
+      <div class="child">Boston Bullard &middot; <span class="grp">School</span></div>
+      <div class="phone">501-305-1433</div>
+    </div>
+    <a class="send" href="sms:+15013051433&body=Hi%20Alli%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Boston%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(9)">TEXT</a>
+    <button class="tick" onclick="toggle(9)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c10">
+    <div class="who">
+      <div class="parent">Jessica Carter</div>
+      <div class="child">Reid Carter &middot; <span class="grp">School</span></div>
+      <div class="phone">903-363-8392</div>
+    </div>
+    <a class="send" href="sms:+19033638392&body=Hi%20Jessica%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Reid%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(10)">TEXT</a>
+    <button class="tick" onclick="toggle(10)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c11">
+    <div class="who">
+      <div class="parent">Leigha Coplen</div>
+      <div class="child">Karleigh Coplen &middot; <span class="grp">School</span></div>
+      <div class="phone">501-412-5206</div>
+    </div>
+    <a class="send" href="sms:+15014125206&body=Hi%20Leigha%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Karleigh%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(11)">TEXT</a>
+    <button class="tick" onclick="toggle(11)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c12">
+    <div class="who">
+      <div class="parent">Cassidi Dion</div>
+      <div class="child">Beckham Dion &middot; <span class="grp">School</span></div>
+      <div class="phone">315-882-6834</div>
+    </div>
+    <a class="send" href="sms:+13158826834&body=Hi%20Cassidi%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Beckham%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(12)">TEXT</a>
+    <button class="tick" onclick="toggle(12)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c13">
+    <div class="who">
+      <div class="parent">Allyson Feather</div>
+      <div class="child">Raegan Feather &middot; <span class="grp">School</span></div>
+      <div class="phone">501-279-8453</div>
+    </div>
+    <a class="send" href="sms:+15012798453&body=Hi%20Allyson%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Raegan%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(13)">TEXT</a>
+    <button class="tick" onclick="toggle(13)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c14">
+    <div class="who">
+      <div class="parent">Jenna Froud</div>
+      <div class="child">Layah Froud &middot; <span class="grp">School</span></div>
+      <div class="phone">918-774-2811</div>
+    </div>
+    <a class="send" href="sms:+19187742811&body=Hi%20Jenna%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Layah%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(14)">TEXT</a>
+    <button class="tick" onclick="toggle(14)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c15">
+    <div class="who">
+      <div class="parent">Mary Hobbs</div>
+      <div class="child">Laura Joy Hobbs &middot; <span class="grp">School</span></div>
+      <div class="phone">501-617-2217</div>
+    </div>
+    <a class="send" href="sms:+15016172217&body=Hi%20Mary%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Laura%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(15)">TEXT</a>
+    <button class="tick" onclick="toggle(15)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c16">
+    <div class="who">
+      <div class="parent">Carolyn McGrath</div>
+      <div class="child">Evie McGrath &middot; <span class="grp">School</span></div>
+      <div class="phone">540-287-9329</div>
+    </div>
+    <a class="send" href="sms:+15402879329&body=Hi%20Carolyn%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Evie%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(16)">TEXT</a>
+    <button class="tick" onclick="toggle(16)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c17">
+    <div class="who">
+      <div class="parent">Stacey Rodenbeck</div>
+      <div class="child">Chris Rodenbeck &middot; <span class="grp">School</span></div>
+      <div class="phone">812-525-7635</div>
+    </div>
+    <a class="send" href="sms:+18125257635&body=Hi%20Stacey%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Chris%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(17)">TEXT</a>
+    <button class="tick" onclick="toggle(17)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c18">
+    <div class="who">
+      <div class="parent">Aimee Salvo</div>
+      <div class="child">Joseph Salvo &middot; <span class="grp">School</span></div>
+      <div class="phone">501-207-1401</div>
+    </div>
+    <a class="send" href="sms:+15012071401&body=Hi%20Aimee%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Joseph%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(18)">TEXT</a>
+    <button class="tick" onclick="toggle(18)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c19">
+    <div class="who">
+      <div class="parent">Shaylee Smith</div>
+      <div class="child">Hadley Smith &middot; <span class="grp">School</span></div>
+      <div class="phone">501-201-0551</div>
+    </div>
+    <a class="send" href="sms:+15012010551&body=Hi%20Shaylee%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Hadley%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(19)">TEXT</a>
+    <button class="tick" onclick="toggle(19)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c20">
+    <div class="who">
+      <div class="parent">Autumn Spears</div>
+      <div class="child">Scotlyn Spears &middot; <span class="grp">School</span></div>
+      <div class="phone">501-230-2951</div>
+    </div>
+    <a class="send" href="sms:+15012302951&body=Hi%20Autumn%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Scotlyn%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(20)">TEXT</a>
+    <button class="tick" onclick="toggle(20)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c21">
+    <div class="who">
+      <div class="parent">Emily Stewart</div>
+      <div class="child">Joseph Stewart &middot; <span class="grp">School</span></div>
+      <div class="phone">317-435-6649</div>
+    </div>
+    <a class="send" href="sms:+13174356649&body=Hi%20Emily%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Joseph%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(21)">TEXT</a>
+    <button class="tick" onclick="toggle(21)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c22">
+    <div class="who">
+      <div class="parent">Meagin Talley</div>
+      <div class="child">Madden Talley &middot; <span class="grp">School</span></div>
+      <div class="phone">501-278-6139</div>
+    </div>
+    <a class="send" href="sms:+15012786139&body=Hi%20Meagin%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Madden%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(22)">TEXT</a>
+    <button class="tick" onclick="toggle(22)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c23">
+    <div class="who">
+      <div class="parent">Jaclynn Williams</div>
+      <div class="child">Kylynn Williams &middot; <span class="grp">School</span></div>
+      <div class="phone">501-230-1019</div>
+    </div>
+    <a class="send" href="sms:+15012301019&body=Hi%20Jaclynn%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Kylynn%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(23)">TEXT</a>
+    <button class="tick" onclick="toggle(23)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c24">
+    <div class="who">
+      <div class="parent">Jennifer Wright</div>
+      <div class="child">Ella Wright &middot; <span class="grp">School</span></div>
+      <div class="phone">501-278-6574</div>
+    </div>
+    <a class="send" href="sms:+15012786574&body=Hi%20Jennifer%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Ella%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(24)">TEXT</a>
+    <button class="tick" onclick="toggle(24)" aria-label="mark sent">&#10003;</button>
+  </div>
+  <div class="card" id="c25">
+    <div class="who">
+      <div class="parent">Alyssa Ng</div>
+      <div class="child">Connor Ng &middot; <span class="grp">School + Bible</span></div>
+      <div class="phone">501-322-1876</div>
+    </div>
+    <a class="send" href="sms:+15013221876&body=Hi%20Alyssa%21%20David%20is%20turning%207%20and%20we%27d%20love%20for%20Connor%20to%20come%20to%20his%20Splash%20N%27%20Bash.%20Sat%20Aug%2029%2C%205%3A30-7%3A30pm%20at%20the%20Searcy%20Swim%20Center.%20Pizza%2C%20cupcakes%2C%20siblings%20welcome%21%20Details%20%2B%201-tap%20RSVP%3A%20https%3A%2F%2Fcfc20.github.io%2Fdavidturns7%2F%20-%20Crystal%20Crouch" onclick="mark(25)">TEXT</a>
+    <button class="tick" onclick="toggle(25)" aria-label="mark sent">&#10003;</button>
+  </div>
+
+<button class="reset" onclick="if(confirm('Clear all checkmarks?')){localStorage.removeItem('sentInvites');location.reload()}">Reset all checkmarks</button>
+
+<script>
+var TOTAL = 26, REAL = 25;
+function get(){try{return JSON.parse(localStorage.getItem('sentInvites')||'[]')}catch(e){return[]}}
+function save(a){try{localStorage.setItem('sentInvites',JSON.stringify(a))}catch(e){}}
+function render(){
+  var s=get(), real=0;
+  for(var i=0;i<TOTAL;i++){
+    var el=document.getElementById('c'+i);
+    if(!el) continue;
+    var isTest = el.className.indexOf('test')>-1;
+    var done = s.indexOf(i)>-1;
+    el.className = 'card' + (isTest?' test':'') + (done?' done':'');
+    if(done && i>0) real++;
+  }
+  document.getElementById('count').textContent = real+' of '+REAL+' sent';
+  document.getElementById('fill').style.width = (real/REAL*100)+'%';
+}
+function toggle(i){
+  var s=get(), k=s.indexOf(i);
+  if(k>-1) s.splice(k,1); else s.push(i);
+  save(s); render();
+}
+function mark(i){ var s=get(); if(s.indexOf(i)<0){s.push(i); save(s);} setTimeout(render,400); }
+render();
+</script>
+</body></html>
