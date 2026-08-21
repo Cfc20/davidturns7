@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>David's 7th Birthday — Spidey Splash Bash</title>
+<title>You're Invited! David's 7th Birthday - Spidey Splash Bash</title>
 <meta name="theme-color" content="#0B1026">
 
-<meta property="og:title" content="🕷️ David's 7th Birthday Spidey Splash Bash - You're Invited!">
-<meta property="og:description" content="Saturday, August 29 · 5:30 to 7:30 PM · Searcy Swim Center. Private pool party, pizza and cupcakes. Tap to RSVP instantly.">
-<meta property="og:image" content="https://cfc20.github.io/davidturns7/preview.jpg">
+<meta property="og:title" content="You're Invited! 🕷️ David's 7th Birthday - Spidey Splash Bash">
+<meta property="og:description" content="Sat, Aug 29 · 5:30 p.m. to 7:30 p.m. · Searcy Swim Center. Private pool party with pizza and cupcakes. Siblings welcome. Tap to RSVP instantly!">
+<meta property="og:image" content="https://cfc20.github.io/davidturns7/preview.jpg?v=9">
 <meta property="og:url" content="https://cfc20.github.io/davidturns7/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="🕷️ David's 7th Birthday Spidey Splash Bash - You're Invited!">
-<meta name="twitter:image" content="https://cfc20.github.io/davidturns7/preview.jpg">
-<link rel="apple-touch-icon" href="https://cfc20.github.io/davidturns7/icon.png">
-<link rel="icon" href="https://cfc20.github.io/davidturns7/icon.png">
+<meta name="twitter:title" content="You're Invited! 🕷️ David's 7th Birthday - Spidey Splash Bash">
+<meta name="twitter:image" content="https://cfc20.github.io/davidturns7/preview.jpg?v=9">
+<link rel="icon" type="image/png" href="spider.png">
+<link rel="apple-touch-icon" href="spider.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
 <style>
 :root{
   --ink:#0B1026; --ink2:#141C3D; --deep:#060A1A;
-  --red:#D6202C; --red2:#FF3B30; --blue:#1B5FE0; --sky:#3FA9F5;
+  --red:#D6202C; --red2:#FF3B30; --blue:#1B5FE0; --sky:#7CCBFF;
   --white:#fff; --mute:#A9BCE4;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -32,18 +32,19 @@ body{font-family:'Nunito',system-ui,sans-serif;background:var(--deep);color:#111
 .wrap{max-width:540px;margin:0 auto;background:#fff;box-shadow:0 0 70px rgba(0,0,0,.6);overflow:hidden}
 
 /* ============ HERO ============ */
-.hero{position:relative;background:radial-gradient(120% 90% at 50% 0%,#1B2A5E 0%,var(--ink) 55%,var(--deep) 100%);color:#fff;text-align:center;padding:46px 22px 42px;overflow:hidden}
-.web{position:absolute;inset:0;opacity:.30;pointer-events:none}
+.hero{position:relative;background:radial-gradient(120% 90% at 50% 0%,#22336E 0%,var(--ink) 55%,var(--deep) 100%);color:#fff;text-align:center;padding:74px 22px 34px;overflow:hidden}
+.web{position:absolute;top:0;left:0;width:100%;height:100%;opacity:.5;pointer-events:none}
 .hero-inner{position:relative;z-index:2}
-.spider{width:56px;height:56px;margin:0 auto 12px;display:block}
-.eyebrow{font-family:'Bangers',cursive;letter-spacing:5px;font-size:21px;color:var(--sky);text-shadow:0 2px 0 rgba(0,0,0,.5)}
-.name{font-family:'Bangers',cursive;font-size:60px;line-height:1;letter-spacing:2px;margin-top:6px;text-shadow:0 4px 0 #000,0 0 26px rgba(255,59,48,.5)}
-.seven{font-family:'Bangers',cursive;font-size:172px;line-height:.92;letter-spacing:2px;margin-top:2px;
+.spider{width:86px;height:auto;margin:0 auto 6px;display:block;filter:brightness(0) invert(1) drop-shadow(0 0 3px #0B1026) drop-shadow(0 3px 5px rgba(0,0,0,.8))}
+.eyebrow{font-family:'Bangers',cursive;letter-spacing:5px;font-size:22px;color:var(--sky);text-shadow:-2px -2px 0 #060A1A,2px -2px 0 #060A1A,-2px 2px 0 #060A1A,2px 2px 0 #060A1A,0 -2px 0 #060A1A,0 2px 0 #060A1A,-2px 0 0 #060A1A,2px 0 0 #060A1A,0 4px 0 #000}
+.name b{color:#FF2E24;font-weight:400;font-size:1.24em;letter-spacing:1px;text-shadow:-2px -2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff,2px 2px 0 #fff,0 -3px 0 #fff,0 3px 0 #fff,-3px 0 0 #fff,3px 0 0 #fff,0 7px 0 #000,0 0 22px rgba(255,46,36,.65)}
+.name{font-family:'Bangers',cursive;font-size:52px;line-height:1;letter-spacing:2px;margin-top:4px;text-shadow:0 4px 0 #000,0 0 26px rgba(255,59,48,.5)}
+.seven{font-family:'Bangers',cursive;font-size:150px;line-height:.9;letter-spacing:2px;margin-top:2px;
   background:linear-gradient(180deg,#FF5A4E 0%,var(--red) 55%,#8E0B14 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
   filter:drop-shadow(0 6px 0 #000) drop-shadow(0 0 30px rgba(214,32,44,.55))}
-.tag{font-family:'Bangers',cursive;font-size:33px;letter-spacing:5px;color:#fff;margin-top:2px;text-shadow:0 3px 0 #000}
-.tag em{color:var(--sky);font-style:normal}
-.sub{font-size:15.5px;font-weight:800;color:var(--mute);margin-top:14px;line-height:1.5}
+.tag{font-family:'Bangers',cursive;font-size:29px;letter-spacing:3.5px;color:#fff;margin-top:2px;text-shadow:0 3px 0 #000}
+.tag em{color:var(--sky);font-style:normal;text-shadow:-2px -2px 0 #060A1A,2px -2px 0 #060A1A,-2px 2px 0 #060A1A,2px 2px 0 #060A1A,0 -2px 0 #060A1A,0 2px 0 #060A1A,-2px 0 0 #060A1A,2px 0 0 #060A1A,0 4px 0 #000}
+.sub{font-size:15.5px;font-weight:800;color:#D3E1F8;margin-top:14px;line-height:1.5;text-shadow:0 2px 3px rgba(0,0,0,.65)}
 
 /* ============ STRIPE ============ */
 .stripe{height:12px;background:repeating-linear-gradient(135deg,var(--red) 0 26px,#B21621 26px 52px)}
@@ -57,6 +58,7 @@ body{font-family:'Nunito',system-ui,sans-serif;background:var(--deep);color:#111
 .row p{font-size:19.5px;font-weight:900;color:var(--ink);line-height:1.3;margin-top:1px}
 .row small{display:block;font-size:14px;font-weight:800;color:#61708F;margin-top:2px}
 .row a{color:var(--blue);text-decoration:none;border-bottom:2px solid #cfe0fb}
+.tapdir{display:inline-block;margin-top:6px;color:#12579E;font-weight:900;font-size:13.5px}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px}
 .chip{background:#EAF1FE;color:#1746A6;font-weight:900;font-size:13px;padding:6px 13px;border-radius:999px}
 
@@ -67,17 +69,22 @@ body{font-family:'Nunito',system-ui,sans-serif;background:var(--deep);color:#111
 
 /* ============ RSVP ============ */
 .rsvp{background:radial-gradient(110% 80% at 50% 0%,#1B2A5E,var(--ink) 60%,var(--deep));color:#fff;text-align:center;padding:38px 22px 44px;position:relative;overflow:hidden}
-.rsvp .web{opacity:.22}
+.rsvp .web{opacity:.32}
 .rsvp-inner{position:relative;z-index:2}
 .rsvp h2{font-family:'Bangers',cursive;font-size:40px;letter-spacing:5px;text-shadow:0 3px 0 #000}
 .by{display:inline-block;background:var(--red);font-weight:900;font-size:13.5px;letter-spacing:.6px;padding:8px 18px;border-radius:999px;margin-top:10px;box-shadow:0 3px 0 #7E0B12}
-.cta{display:block;max-width:360px;margin:20px auto 0;padding:20px 18px;border-radius:16px;text-decoration:none;color:#fff;
-  font-family:'Bangers',cursive;font-size:25px;letter-spacing:1.6px;
-  background:linear-gradient(180deg,var(--red2),var(--red));box-shadow:0 6px 0 #7E0B12,0 12px 26px rgba(255,59,48,.35);
-  border:2px solid rgba(255,255,255,.18)}
-.cta small{display:block;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;letter-spacing:0;margin-top:5px;color:#FFE2DF}
+.cta{display:block;max-width:400px;margin:24px auto 0;padding:26px 30px 24px;border-radius:18px;text-decoration:none;color:#fff;font-family:'Bangers',cursive;font-size:24px;letter-spacing:1.4px;line-height:1.2;background:linear-gradient(180deg,var(--red2),var(--red));box-shadow:0 6px 0 #7E0B12,0 12px 26px rgba(255,59,48,.35);border:2px solid rgba(255,255,255,.18)}
+.cta span{display:inline-block;vertical-align:middle}
+.cta-spider{width:46px;height:auto;display:inline-block;vertical-align:middle;margin:0 14px 3px 0;filter:brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,.6))}
+.cta small{display:block;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;letter-spacing:0;margin-top:6px;line-height:1.35;color:#FFE2DF}
 .cta:active{transform:translateY(4px);box-shadow:0 2px 0 #7E0B12}
 .helper{font-size:13.5px;font-weight:800;color:var(--mute);margin-top:16px;line-height:1.6}
+.calbox{margin:26px auto 0;max-width:400px}
+.callabel{font-weight:900;font-size:13px;letter-spacing:2.5px;color:#A9BCE4;text-transform:uppercase;margin-bottom:12px}
+.calrow{display:flex;gap:12px;justify-content:center}
+.calbtn{flex:1;display:block;padding:15px 10px;border-radius:13px;text-decoration:none;background:rgba(255,255,255,.10);border:2px solid rgba(255,255,255,.28);color:#fff;font-family:'Bangers',cursive;font-size:18px;letter-spacing:1.2px;line-height:1.15}
+.calbtn small{display:block;font-family:'Nunito',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:0;color:#C9D9F5;margin-top:4px}
+.calbtn:active{background:rgba(255,255,255,.2)}
 .call{display:inline-block;margin-top:16px;color:#fff;text-decoration:none;font-weight:900;font-size:17px;border-bottom:2px solid rgba(255,255,255,.3);padding-bottom:2px}
 .contact{font-weight:900;font-size:14px;color:var(--mute);margin-top:22px}
 .foot{background:#03060F;text-align:center;padding:15px;font-size:12px;font-weight:800;color:#48597F;letter-spacing:.4px}
@@ -95,25 +102,21 @@ body{font-family:'Nunito',system-ui,sans-serif;background:var(--deep);color:#111
 
 <!-- HERO -->
 <section class="hero">
-  <svg class="web" viewBox="0 0 400 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#7FB2FF" stroke-width="1" fill="none" opacity=".9">
-      <path d="M0 0 L400 300 M0 0 L400 150 M0 0 L400 30 M0 0 L250 300 M0 0 L90 300 M0 0 L0 300 M0 0 L400 0"/>
-      <path d="M60 22 Q40 52 22 60"/><path d="M120 45 Q84 104 45 122"/><path d="M186 70 Q128 160 70 188"/>
-      <path d="M252 96 Q172 216 96 252"/><path d="M318 122 Q216 272 122 300"/>
+  <svg class="web" viewBox="0 0 540 460" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#9CC4FF" stroke-width="1.2" fill="none" opacity="1">
+      <path d="M270 10 L2 200 M270 10 L2 330 M270 10 L2 458 M270 10 L92 458 M270 10 L181 458"/>
+      <path d="M270 10 L538 200 M270 10 L538 330 M270 10 L538 458 M270 10 L448 458 M270 10 L359 458"/>
+      <path d="M196 78 Q270 112 344 78"/>
+      <path d="M124 152 Q270 208 416 152"/>
+      <path d="M56 232 Q270 302 484 232"/>
+      <path d="M14 318 Q270 398 526 318"/>
     </g>
   </svg>
   <div class="hero-inner">
-    <svg class="spider" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none">
-        <path d="M26 26 L10 14 L4 22 M26 32 L6 32 M26 38 L10 50 M38 26 L54 14 L60 22 M38 32 L58 32 M38 38 L54 50"/>
-      </g>
-      <ellipse cx="32" cy="24" rx="7" ry="6" fill="#fff"/>
-      <ellipse cx="32" cy="38" rx="10" ry="12" fill="#fff"/>
-    </svg>
-    <div class="eyebrow">SPIDEY ALERT</div>
-    <div class="name">DAVID IS TURNING</div>
-    <div class="seven">7</div>
-    <div class="tag">SPLASH <em>BASH</em></div>
+    <img class="spider" src="spider.png" alt="" onerror="this.style.display='none'">
+    <div class="eyebrow">YOU'RE INVITED!</div>
+    <div class="name">DAVID'S <b>7TH</b> BIRTHDAY</div>
+        <div class="tag">SPIDEY SPLASH <em>BASH</em></div>
     <p class="sub">Suit up for a private pool party!<br>Pizza, cupcakes &amp; cannonballs.</p>
   </div>
 </section>
@@ -124,17 +127,17 @@ body{font-family:'Nunito',system-ui,sans-serif;background:var(--deep);color:#111
 <section class="details">
   <div class="row"><div class="ico">📅</div><div>
     <h3>When</h3>
-    <p>Saturday, August 29, 2026<small>5:30 PM – 7:30 PM</small></p>
+    <p>Saturday, August 29, 2026<small>5:30 p.m. to 7:30 p.m.</small></p>
   </div></div>
 
   <div class="row"><div class="ico">📍</div><div>
     <h3>Where</h3>
-    <p><a href="https://maps.google.com/?q=Searcy+Swim+Center,+525+Recreation+Wy,+Searcy,+AR+72143">Searcy Swim Center</a><small>525 Recreation Wy, Searcy, AR 72143 · tap for directions</small></p>
+    <p><a href="https://www.google.com/maps/dir/?api=1&destination=Searcy+Swim+Center%2C+525+Recreation+Wy%2C+Searcy%2C+AR+72143">Searcy Swim Center</a><small>525 Recreation Wy, Searcy, AR 72143<br><span class="tapdir">Tap for directions</span></small></p>
   </div></div>
 
   <div class="row"><div class="ico">🍕</div><div>
     <h3>Food</h3>
-    <p>Pizza &amp; Cupcakes<small>Tell us about any allergies when you RSVP</small></p>
+    <p>Pizza &amp; Cupcakes</p>
   </div></div>
 
   <div class="row"><div class="ico">🎒</div><div>
@@ -145,17 +148,18 @@ body{font-family:'Nunito',system-ui,sans-serif;background:var(--deep);color:#111
 
 <!-- ALERT -->
 <div class="alert">
-  <h3>⏰ PLEASE ARRIVE BY 5:30 SHARP</h3>
-  <p>We have the pool privately from 5:30 to 7:30 only. Every minute counts!</p>
+  <h3>⏰ PLEASE ARRIVE BY 5:30 P.M. SHARP</h3>
+  <p>We have the pool privately from 5:30 p.m. to 7:30 p.m. only. Every minute counts!</p>
 </div>
 
 <!-- RSVP -->
 <section class="rsvp">
-  <svg class="web" viewBox="0 0 400 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#7FB2FF" stroke-width="1" fill="none">
-      <path d="M400 0 L0 300 M400 0 L0 150 M400 0 L0 30 M400 0 L150 300 M400 0 L310 300 M400 0 L400 300"/>
-      <path d="M340 22 Q360 52 378 60"/><path d="M280 45 Q316 104 355 122"/><path d="M214 70 Q272 160 330 188"/>
-      <path d="M148 96 Q228 216 304 252"/>
+  <svg class="web" viewBox="0 0 540 460" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#9CC4FF" stroke-width="1.2" fill="none">
+      <path d="M270 10 L2 200 M270 10 L2 330 M270 10 L2 458 M270 10 L92 458 M270 10 L181 458"/>
+      <path d="M270 10 L538 200 M270 10 L538 330 M270 10 L538 458 M270 10 L448 458 M270 10 L359 458"/>
+      <path d="M196 78 Q270 112 344 78"/><path d="M124 152 Q270 208 416 152"/>
+      <path d="M56 232 Q270 302 484 232"/><path d="M14 318 Q270 398 526 318"/>
     </g>
   </svg>
   <div class="rsvp-inner">
@@ -163,18 +167,24 @@ body{font-family:'Nunito',system-ui,sans-serif;background:var(--deep);color:#111
     <div class="by">Please reply by Wed, August 26</div>
 
     <a class="cta" href="sms:+19562075879?&body=Hi%20Crystal%21%20Confirming%20David%27s%207th%20Birthday%20%F0%9F%95%B7%EF%B8%8F%0AYour%20name%3A%20%0AYour%20number%3A%20%0AChild%27s%20name%3A%20%0ATotal%20attendees%20%28kids%20%2B%20adults%29%3A%20%0AFood%20allergies%3A%20">
-      🕸️ TAP TO TEXT YOUR RSVP
-      <small>Opens your messages with everything filled in. Just add your info and hit send.</small>
+      <img class="cta-spider" src="spider.png" alt="" onerror="this.style.display='none'">
+      <span>TAP TO TEXT IN YOUR RSVP</span>
+      <small>Your message is ready. Fill it in and send.</small>
     </a>
 
-    <p class="helper">Works on iPhone and Android.<br>Takes about 15 seconds.</p>
+    <div class="calbox">
+      <div class="callabel">Add to your calendar</div>
+      <div class="calrow">
+        <a class="calbtn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=David%27s%207th%20Birthday%20-%20Spidey%20Splash%20Bash&amp;dates=20260829T223000Z/20260830T003000Z&amp;details=Private%20pool%20party%20for%20David%27s%207th%20birthday%21%0A%0APlease%20arrive%20by%205%3A30%20p.m.%20sharp%20-%20the%20pool%20is%20reserved%205%3A30%20to%207%3A30%20p.m.%20only.%0APizza%20and%20cupcakes%20provided.%20Bring%20a%20swimsuit%20and%20towel%3B%20pool%20toys%20welcome.%20Siblings%20welcome%21%0A%0AQuestions%3A%20Crystal%20Crouch%20%28956%29%20207-5879&amp;location=Searcy%20Swim%20Center%2C%20525%20Recreation%20Wy%2C%20Searcy%2C%20AR%2072143" target="_blank" rel="noopener">GOOGLE<small>Calendar</small></a>
+        <a class="calbtn" href="event.ics" download>APPLE<small>&amp; Outlook</small></a>
+      </div>
+    </div>
 
     <a class="call" href="tel:+19562075879">Or call / text (956) 207-5879</a>
     <div class="contact">Crystal Crouch · David's mom</div>
   </div>
 </section>
 
-<div class="foot">DAVID'S 7TH BIRTHDAY · SEARCY SWIM CENTER · AUG 29, 2026</div>
 </div>
 </body>
 </html>
